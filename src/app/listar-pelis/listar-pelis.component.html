@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading text-center">
+      <h2>Listado de películas</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <table class="table col-12 table-striped text-center table-responsive-md">
+          <tr>
+            <th>Director</th>
+            <th>Título película</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+          <tr *ngFor="let peli of peliculas | async">
+            <td>{{peli.director}}</td>
+            <td>{{peli.titulo}}</td>
+            <td>{{peli.fecha}}</td>
+            <td>
+              <button (click)="detallesPeli(peli.titulo)" class="btn btn-info" style="margin-left: 10px">Ver
+                Detalles</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <button (click)="volverIndex()" class="btn btn-success">Volver al index</button>
+    </div>
+  </div>
