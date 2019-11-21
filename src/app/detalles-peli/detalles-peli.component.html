@@ -1,1 +1,12 @@
-<p>detalles-peli works!</p>
+<h2>Detalles de la película</h2>
+
+<hr/>
+<div *ngIf="pelicula">
+  <div>
+    <p>La película {{pelicula.titulo}} del director {{pelicula.director}} del año {{pelicula.fecha}}</p>
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="lista()" class="btn btn-primary">Volver a la lista de películas</button><br>

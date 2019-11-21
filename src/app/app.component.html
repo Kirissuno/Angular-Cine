@@ -1,18 +1,21 @@
 <div class="container bg-primary mt-3 justify-content-center">
-    <!-- Links -->
-    <div class="row text-center">
-      <div class="col-12">
-        <a routerLink="filmografia" class="text-white" routerLinkActive="active">Listar Peliculas</a>
-      </div>
+  <!-- Links -->
+  <div class="row text-center">
+    <div class="col-6">
+      <a routerLink="filmografias" class="text-white" routerLinkActive="active">Consultar Directores</a>
+    </div>
+    <div class="col-6">
+      <a routerLink="login" class="text-white" routerLinkActive="active">Login</a>
     </div>
   </div>
-  <div class="container">
-    <br>
-    <h2 style="text-align: center;">{{title}}</h2>
-    <hr>
-    <div class="card">
-      <div class="card-body">
-        <router-outlet></router-outlet>
-      </div>
+</div>
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
     </div>
   </div>
+</div>

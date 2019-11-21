@@ -8,10 +8,24 @@ import { HttpClient } from '@angular/common/http';
 export class PeliculaService {
   private baseUrl = 'http://localhost:8080/filmografia';
 
+  registro : String[] = [];
+
   constructor(private http:HttpClient) { }
+
+  anadirReg(nombre:String){
+    this.registro.push(nombre);
+  }
+
+  borrarReg(){
+    this.registro = [];
+  }
 
   getListaPelis(): Observable<any>{
     return this.http.get(`${this.baseUrl}`);
+  }
+
+  getListaPelisDirector(nombre:String): Observable<any>{
+    return this.http.get(`${this.baseUrl}s/${nombre}`);
   }
 
   getPeli(titulo: String): Observable<any>{

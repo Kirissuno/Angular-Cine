@@ -16,7 +16,6 @@ export class ListarPelisComponent implements OnInit {
   constructor(private peliService: PeliculaService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.peliculas)
     this.cargarLista();
   }
 

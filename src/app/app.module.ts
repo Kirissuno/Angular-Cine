@@ -8,13 +8,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { DetallesPeliComponent } from './detalles-peli/detalles-peli.component';
+import { BuscarDirectorComponent } from './buscar-director/buscar-director.component';
+import { ListaDirectorComponent } from './lista-director/lista-director.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarPelisComponent,
     IndexComponent,
-    DetallesPeliComponent
+    DetallesPeliComponent,
+    BuscarDirectorComponent,
+    ListaDirectorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
