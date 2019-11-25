@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Pelicula } from '../pelicula';
 import { PeliculaService } from '../pelicula.service';
 import { Router } from '@angular/router';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-listar-pelis',
@@ -12,8 +13,11 @@ import { Router } from '@angular/router';
 
 export class ListarPelisComponent implements OnInit {
   peliculas: Observable<Pelicula[]>
+  logeado :boolean;
 
-  constructor(private peliService: PeliculaService, private router: Router) { }
+  constructor(private adminService:AdminService, private peliService: PeliculaService, private router: Router) {
+    this.logeado = this.adminService.logeado;
+  }
 
   ngOnInit() {
     this.cargarLista();
@@ -24,6 +28,21 @@ export class ListarPelisComponent implements OnInit {
   }
 
   detallesPeli(titulo:String){
+    this.router.navigate(['filmografia', titulo])
+  }
+
+  borrarPeli(titulo:String){
+    this.peliService.borrarPeli(titulo)
+      .subscribe(
+        data =>{
+          this.cargarLista();
+        }, error =>{
+          console.log(error)
+        }
+      )
+  }
+
+  updatePeli(titulo:String){
     this.router.navigate(['filmografia', titulo])
   }
 

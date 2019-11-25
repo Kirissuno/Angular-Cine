@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PeliculaService } from '../pelicula.service';
 import { Pelicula } from '../pelicula';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-detalles-peli',
@@ -11,8 +12,11 @@ import { Pelicula } from '../pelicula';
 export class DetallesPeliComponent implements OnInit {
   titulo: String;
   pelicula: Pelicula;
+  logeado: boolean;
 
-  constructor(private router:Router, private route:ActivatedRoute, private pservice:PeliculaService) { }
+  constructor(private adminService:AdminService, private router:Router, private route:ActivatedRoute, private pservice:PeliculaService) {
+    this.logeado = this.adminService.logeado;
+   }
 
   ngOnInit() {
     this.pelicula = new Pelicula();
@@ -21,6 +25,15 @@ export class DetallesPeliComponent implements OnInit {
       .subscribe(data=>{
         this.pelicula = data;
       })
+  }
+
+  updatePeli(){
+    this.pservice.updatePeli(this.pelicula)
+      .subscribe(() => this.lista());
+  }
+
+  onSubmit(){
+    this.updatePeli();
   }
 
   lista(){

@@ -2,7 +2,7 @@
     <div class="panel-heading text-center">
         <h2>Listado de películas de {{nombre}}</h2>
     </div>
-    {{tamano}}
+    {{$peliculas.length | async}}
     <div class="panel-body">
         <div class="row">
             <table class="table col-12 table-striped text-center table-responsive-md">

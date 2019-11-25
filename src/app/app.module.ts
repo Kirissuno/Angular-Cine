@@ -11,6 +11,7 @@ import { DetallesPeliComponent } from './detalles-peli/detalles-peli.component';
 import { BuscarDirectorComponent } from './buscar-director/buscar-director.component';
 import { ListaDirectorComponent } from './lista-director/lista-director.component';
 import { LoginComponent } from './login/login.component';
+import { NuevaPeliComponent } from './nueva-peli/nueva-peli.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login.component';
     DetallesPeliComponent,
     BuscarDirectorComponent,
     ListaDirectorComponent,
-    LoginComponent
+    LoginComponent,
+    NuevaPeliComponent
   ],
   imports: [
     BrowserModule,

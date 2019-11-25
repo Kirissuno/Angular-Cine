@@ -26,6 +26,7 @@ export class ListaDirectorComponent implements OnInit {
   cargarLista(){
     this.nombre = this.route.snapshot.params['nombre'];
     this.peliculas = this.peliService.getListaPelisDirector(this.nombre);
+
   }
 
   realizarBusqueda(){
